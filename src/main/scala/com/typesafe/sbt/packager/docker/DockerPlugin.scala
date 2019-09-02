@@ -69,6 +69,13 @@ object DockerPlugin extends AutoPlugin {
   // Some of the default values are now provided in the global setting based on
   // sbt plugin best practice: https://www.scala-sbt.org/release/docs/Plugins-Best-Practices.html#Provide+default+values+in
   override lazy val globalSettings: Seq[Setting[_]] = Seq(
+    // See https://github.com/sbt/sbt-native-packager/issues/1187
+    // Note: Do not make this setting depend on the Docker version.
+    // Docker version may change depending on the person running the build, or even with something like
+    // `eval $(minikube docker-env)`.
+    // The Docker image the build creates should be repeatable regardless of who runs it as much as possible.
+    // Instead of making dockerPermissionStrategy dependent on the Docker version, what we do instead is to
+    // run validation, and warn the build users if the strategy is not compatible with `docker` that's in scope.
     dockerPermissionStrategy := DockerPermissionStrategy.MultiStage,
     dockerChmodType := DockerChmodType.UserGroupReadExecute
   )
@@ -99,7 +106,6 @@ object DockerPlugin extends AutoPlugin {
     },
     dockerEntrypoint := Seq(s"${(defaultLinuxInstallLocation in Docker).value}/bin/${executableScriptName.value}"),
     dockerCmd := Seq(),
-    dockerExecCommand := Seq("docker"),
     dockerVersion := Try(Process(dockerExecCommand.value ++ Seq("version", "--format", "'{{.Server.Version}}'")).!!).toOption
       .map(_.trim)
       .flatMap(DockerVersion.parse),
@@ -362,14 +368,22 @@ object DockerPlugin extends AutoPlugin {
                                 gidOpt: Option[String]): CmdLike =
     Cmd(
       "RUN",
-      (List("id", "-u", daemonUser, "2>", "/dev/null", "||") :::
+      (List("id", "-u", daemonUser, "1>/dev/null", "2>&1", "||") :::
         (gidOpt.fold[List[String]](Nil)(
-        gid => List("((", "getent", "group", gid, "||", "groupadd", "-g", gid, daemonGroup, ")", "&&")
+        gid =>
+          List("((", "getent", "group", gid, "1>/dev/null", "2>&1", "||") :::
+            List("(", "type", "groupadd", "1>/dev/null", "2>&1", "&&") :::
+            List("groupadd", "-g", gid, daemonGroup, "||") :::
+            List("addgroup", "-g", gid, "-S", daemonGroup, "))", "&&")
       )) :::
+        List("(", "type", "useradd", "1>/dev/null", "2>&1", "&&") :::
         List("useradd", "--system", "--create-home") :::
         (uidOpt.fold[List[String]](Nil)(List("--uid", _))) :::
         (gidOpt.fold[List[String]](Nil)(List("--gid", _))) :::
-        List(daemonUser, ")")): _*
+        List(daemonUser, "||") :::
+        List("adduser", "-S") :::
+        (uidOpt.fold[List[String]](Nil)(List("-u", _))) :::
+        List("-G", daemonGroup, daemonUser, "))")): _*
     )
 
   /**
@@ -463,7 +477,7 @@ object DockerPlugin extends AutoPlugin {
     inConfig(Docker)(Seq(mappings := renameDests((mappings in Universal).value, defaultLinuxInstallLocation.value)))
   }
 
-  private[docker] def publishLocalLogger(log: Logger) =
+  private[packager] def publishLocalLogger(log: Logger) =
     new sys.process.ProcessLogger {
       override def err(err: => String): Unit =
         err match {

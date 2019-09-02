@@ -21,7 +21,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.5" % Test
 )
 
-// sbt dependend libraries
+// sbt dependent libraries
 libraryDependencies ++= {
   (pluginCrossBuild / sbtVersion).value match {
     case v if v.startsWith("1.") =>
@@ -68,7 +68,19 @@ mimaBinaryIssueFilters ++= {
     ProblemFilters.exclude[MissingTypesProblem]("com.typesafe.sbt.packager.rpm.RpmMetadata$"),
     ProblemFilters.exclude[DirectMissingMethodProblem]("com.typesafe.sbt.packager.rpm.RpmMetadata.apply"),
     ProblemFilters.exclude[DirectMissingMethodProblem]("com.typesafe.sbt.packager.rpm.RpmMetadata.copy"),
-    ProblemFilters.exclude[DirectMissingMethodProblem]("com.typesafe.sbt.packager.rpm.RpmMetadata.this")
+    ProblemFilters.exclude[DirectMissingMethodProblem]("com.typesafe.sbt.packager.rpm.RpmMetadata.this"),
+    // added via #1251
+    ProblemFilters.exclude[ReversedMissingMethodProblem](
+      "com.typesafe.sbt.packager.universal.UniversalKeys.com$typesafe$sbt$packager$universal$UniversalKeys$_setter_$containerBuildImage_="
+    ),
+    ProblemFilters
+      .exclude[ReversedMissingMethodProblem]("com.typesafe.sbt.packager.universal.UniversalKeys.containerBuildImage"),
+    ProblemFilters.exclude[ReversedMissingMethodProblem](
+      "com.typesafe.sbt.packager.graalvmnativeimage.GraalVMNativeImageKeys.graalVMNativeImageGraalVersion"
+    ),
+    ProblemFilters.exclude[ReversedMissingMethodProblem](
+      "com.typesafe.sbt.packager.graalvmnativeimage.GraalVMNativeImageKeys.com$typesafe$sbt$packager$graalvmnativeimage$GraalVMNativeImageKeys$_setter_$graalVMNativeImageGraalVersion_="
+    )
   )
 }
 
@@ -103,7 +115,7 @@ addCommandAlias("validate", "; clean ; update ; validateFormatting ; test ; mima
 // List all scripted test separately to schedule them in different travis-ci jobs.
 // Travis-CI has hard timeouts for jobs, so we run them in smaller jobs as the scripted
 // tests take quite some time to run.
-// Ultimatley we should run only those tests that are necessary for a change
+// Ultimately we should run only those tests that are necessary for a change
 addCommandAlias("validateUniversal", "scripted universal/*")
 addCommandAlias("validateJar", "scripted jar/*")
 addCommandAlias("validateBash", "scripted bash/*")

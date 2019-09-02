@@ -57,7 +57,7 @@ Add the following to your `project/plugins.sbt` file:
 
 ```scala
 // for autoplugins
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.21")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.4.1")
 ```
 
 In your `build.sbt` enable the plugin you want. For example the
@@ -119,16 +119,12 @@ or provide a richer API for a single packaging format.
 
 - [sbt-aether](https://github.com/arktekk/sbt-aether-deploy)
 - [sbt-assembly](https://github.com/sbt/sbt-assembly)
-- [sbt-bundle](https://github.com/sbt/sbt-bundle)
 - [sbt-docker](https://github.com/marcuslonnberg/sbt-docker)
   - This is in addition to the built-in [Docker Plugin](http://www.scala-sbt.org/sbt-native-packager/formats/docker.html) from  sbt-native.  Both generate docker images. `sbt-docker` provides more customization abilities, while the `DockerPlugin` in this project  integrates more directly with predefined archetypes.
-- [sbt-docker-containers](https://github.com/Dwolla/sbt-docker-containers) - enhances sbt-native-packager's docker functionality.
 - [sbt-heroku](https://github.com/heroku/sbt-heroku)
 - [sbt-newrelic](https://github.com/gilt/sbt-newrelic)
 - [sbt-packager](https://github.com/en-japan/sbt-packer)
 - [sbt-package-courier](https://github.com/alkersan/sbt-package-courier)
-- [sbt-typesafe-conductr](https://github.com/sbt/sbt-conductr)
-
 
 [formats]: http://www.scala-sbt.org/sbt-native-packager/gettingstarted.html#packaging-formats
 [Java application]: http://www.scala-sbt.org/sbt-native-packager/archetypes/java_app/index.html

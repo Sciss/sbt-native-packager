@@ -1,5 +1,99 @@
 # Change Log
 
+## [Unreleased](https://github.com/sbt/sbt-native-packager/tree/HEAD)
+
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.4.0...HEAD)
+
+**Closed issues:**
+
+- Build Graal native images in a docker container [\#1250](https://github.com/sbt/sbt-native-packager/issues/1250)
+
+## [v1.4.0](https://github.com/sbt/sbt-native-packager/tree/v1.4.0) (2019-08-21)
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.25...v1.4.0)
+
+**Fixed bugs:**
+
+- Docker image with AshScriptPlugin does not run at all [\#1118](https://github.com/sbt/sbt-native-packager/issues/1118)
+- AshScriptPlugin forbids command parameters [\#1017](https://github.com/sbt/sbt-native-packager/issues/1017)
+
+**Closed issues:**
+
+- JlinkPlugin: properly handle external modules  [\#1247](https://github.com/sbt/sbt-native-packager/issues/1247)
+- Flaky rpm tests [\#1246](https://github.com/sbt/sbt-native-packager/issues/1246)
+- fileDescriptorLimit could not set according to system default value [\#1158](https://github.com/sbt/sbt-native-packager/issues/1158)
+- Can sbt-native-packager help to create Release files? [\#1129](https://github.com/sbt/sbt-native-packager/issues/1129)
+- Make systemd service option available to universal tarball. [\#1115](https://github.com/sbt/sbt-native-packager/issues/1115)
+- java.lang.ArrayIndexOutOfBoundsException: 1 when running sbt elastic-beanstalk:dist [\#1098](https://github.com/sbt/sbt-native-packager/issues/1098)
+- Support multiple docker aliases [\#1081](https://github.com/sbt/sbt-native-packager/issues/1081)
+- Multiple issues building debian for Systemd from play application [\#1050](https://github.com/sbt/sbt-native-packager/issues/1050)
+- \[Idea\] JDK 9's jlink & sbt-native-packager? [\#1043](https://github.com/sbt/sbt-native-packager/issues/1043)
+- Systemd packaging doesn't support multiple `EnvironmentFile` options [\#968](https://github.com/sbt/sbt-native-packager/issues/968)
+- Created bin/ scripts fail if path where they are contains : [\#926](https://github.com/sbt/sbt-native-packager/issues/926)
+- Mappings are not contained in JDKPackager bundles [\#782](https://github.com/sbt/sbt-native-packager/issues/782)
+- option to exclude scala-library explicitly  [\#716](https://github.com/sbt/sbt-native-packager/issues/716)
+- Create integration tests [\#545](https://github.com/sbt/sbt-native-packager/issues/545)
+- Feature request: createHomeDirectory [\#238](https://github.com/sbt/sbt-native-packager/issues/238)
+- windows installer [\#12](https://github.com/sbt/sbt-native-packager/issues/12)
+
+**Merged pull requests:**
+
+- Fox \#1246 flaky rpm tests [\#1249](https://github.com/sbt/sbt-native-packager/pull/1249) ([muuki88](https://github.com/muuki88))
+- JlinkPlugin: restrict linking to platform modules [\#1248](https://github.com/sbt/sbt-native-packager/pull/1248) ([nigredo-tori](https://github.com/nigredo-tori))
+
+## [v1.3.25](https://github.com/sbt/sbt-native-packager/tree/v1.3.25) (2019-07-10)
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.24...v1.3.25)
+
+**Closed issues:**
+
+- JlinkPlugin: support multi-release dependencies [\#1243](https://github.com/sbt/sbt-native-packager/issues/1243)
+- Assorted JlinkPlugin improvements [\#1240](https://github.com/sbt/sbt-native-packager/issues/1240)
+
+**Merged pull requests:**
+
+- JlinkPlugin: Sort missing dependencies before logging [\#1245](https://github.com/sbt/sbt-native-packager/pull/1245) ([nigredo-tori](https://github.com/nigredo-tori))
+- JlinkPlugin: support multi-release dependencies [\#1244](https://github.com/sbt/sbt-native-packager/pull/1244) ([nigredo-tori](https://github.com/nigredo-tori))
+
+## [v1.3.24](https://github.com/sbt/sbt-native-packager/tree/v1.3.24) (2019-06-26)
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.23...v1.3.24)
+
+**Merged pull requests:**
+
+- Assorted JlinkPlugin improvements [\#1242](https://github.com/sbt/sbt-native-packager/pull/1242) ([nigredo-tori](https://github.com/nigredo-tori))
+
+## [v1.3.23](https://github.com/sbt/sbt-native-packager/tree/v1.3.23) (2019-06-24)
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.22...v1.3.23)
+
+**Closed issues:**
+
+- Swtich to OpenJDK [\#1239](https://github.com/sbt/sbt-native-packager/issues/1239)
+- Deployed documentation is outdated [\#1236](https://github.com/sbt/sbt-native-packager/issues/1236)
+- start/stop lifecycle of application with sbt-native-packager [\#1232](https://github.com/sbt/sbt-native-packager/issues/1232)
+- how to question :: integration with gitlab CI [\#1213](https://github.com/sbt/sbt-native-packager/issues/1213)
+- Problem with docker:publishLocal for alpine [\#1202](https://github.com/sbt/sbt-native-packager/issues/1202)
+
+**Merged pull requests:**
+
+- Use OpenJDK intead of Oracle JDK [\#1241](https://github.com/sbt/sbt-native-packager/pull/1241) ([jiminhsieh](https://github.com/jiminhsieh))
+- Reuse cache for GraalVM and sbt [\#1237](https://github.com/sbt/sbt-native-packager/pull/1237) ([jiminhsieh](https://github.com/jiminhsieh))
+- Possible improvement for \#1202 [\#1235](https://github.com/sbt/sbt-native-packager/pull/1235) ([borice](https://github.com/borice))
+
+## [v1.3.22](https://github.com/sbt/sbt-native-packager/tree/v1.3.22) (2019-05-28)
+[Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.21...v1.3.22)
+
+**Fixed bugs:**
+
+- Docker version detection fails on Ubuntu 16.04 [\#1230](https://github.com/sbt/sbt-native-packager/issues/1230)
+
+**Merged pull requests:**
+
+- Improve Docker version detection [\#1231](https://github.com/sbt/sbt-native-packager/pull/1231) ([eed3si9n](https://github.com/eed3si9n))
+- sbt-conductr is EOL [\#1228](https://github.com/sbt/sbt-native-packager/pull/1228) ([wsargent](https://github.com/wsargent))
+- remove docker-containers [\#1227](https://github.com/sbt/sbt-native-packager/pull/1227) ([wsargent](https://github.com/wsargent))
+- Fix dependency handling in JlinkPlugin \(+ general improvements\) [\#1226](https://github.com/sbt/sbt-native-packager/pull/1226) ([nigredo-tori](https://github.com/nigredo-tori))
+- Update graalvm installation script [\#1224](https://github.com/sbt/sbt-native-packager/pull/1224) ([gurinderu](https://github.com/gurinderu))
+- fix error message for jdkpackager when antTaskLib is missing [\#1222](https://github.com/sbt/sbt-native-packager/pull/1222) ([Sciss](https://github.com/Sciss))
+- Mention discoveredMainClasses in documentation [\#1216](https://github.com/sbt/sbt-native-packager/pull/1216) ([Discipe](https://github.com/Discipe))
+
 ## [v1.3.21](https://github.com/sbt/sbt-native-packager/tree/v1.3.21) (2019-05-05)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.3.20...v1.3.21)
 
@@ -545,6 +639,8 @@
 - Define addJava in ash-template [\#944](https://github.com/sbt/sbt-native-packager/pull/944) ([muuki88](https://github.com/muuki88))
 - Drop "in Docker" in some docker keys [\#939](https://github.com/sbt/sbt-native-packager/pull/939) ([dwijnand](https://github.com/dwijnand))
 - Allow custom templates to be provided separately for each template [\#938](https://github.com/sbt/sbt-native-packager/pull/938) ([ANorwell](https://github.com/ANorwell))
+- Use stage  task instead of debianExplodedPackage [\#925](https://github.com/sbt/sbt-native-packager/pull/925) ([muuki88](https://github.com/muuki88))
+- \[rpm\] Fixes \#894. Symlinks only removed during uninstall, not during update of RPM. [\#895](https://github.com/sbt/sbt-native-packager/pull/895) ([kodemaniak](https://github.com/kodemaniak))
 
 ## [v1.2.0-M8](https://github.com/sbt/sbt-native-packager/tree/v1.2.0-M8) (2017-01-25)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.2.0-M7...v1.2.0-M8)
@@ -570,8 +666,6 @@
 - Fixes issue \#789 where brpJavaRepack was negated [\#932](https://github.com/sbt/sbt-native-packager/pull/932) ([YuvalItzchakov](https://github.com/YuvalItzchakov))
 - Wip/remove symbolic operators [\#931](https://github.com/sbt/sbt-native-packager/pull/931) ([muuki88](https://github.com/muuki88))
 - Fix appveyor build [\#930](https://github.com/sbt/sbt-native-packager/pull/930) ([muuki88](https://github.com/muuki88))
-- Use stage  task instead of debianExplodedPackage [\#925](https://github.com/sbt/sbt-native-packager/pull/925) ([muuki88](https://github.com/muuki88))
-- Change shebang in bash-forwarder-template to `\#!/usr/bin/env bash`. [\#923](https://github.com/sbt/sbt-native-packager/pull/923) ([jan0sch](https://github.com/jan0sch))
 - \[rpm\] Fix configWithNoReplace docs [\#920](https://github.com/sbt/sbt-native-packager/pull/920) ([kodemaniak](https://github.com/kodemaniak))
 - If mappings are empty don't add them to the linuxPackageMappings [\#917](https://github.com/sbt/sbt-native-packager/pull/917) ([muuki88](https://github.com/muuki88))
 - "docker push" should support dockerExecCommand [\#911](https://github.com/sbt/sbt-native-packager/pull/911) ([rbellamy](https://github.com/rbellamy))
@@ -603,7 +697,6 @@
 - DockerAlias should have version scoped to Docker [\#905](https://github.com/sbt/sbt-native-packager/pull/905) ([rbellamy](https://github.com/rbellamy))
 - fix a bug in the ash-template [\#897](https://github.com/sbt/sbt-native-packager/pull/897) ([stew](https://github.com/stew))
 - RpmNoReplaceplugin and LinuxMappingDSL for "noreplace" configs [\#896](https://github.com/sbt/sbt-native-packager/pull/896) ([kodemaniak](https://github.com/kodemaniak))
-- \[rpm\] Fixes \#894. Symlinks only removed during uninstall, not during update of RPM. [\#895](https://github.com/sbt/sbt-native-packager/pull/895) ([kodemaniak](https://github.com/kodemaniak))
 - Fixed SystemVPlugin override start script behavior for debian [\#893](https://github.com/sbt/sbt-native-packager/pull/893) ([mitch-seymour](https://github.com/mitch-seymour))
 
 ## [v1.2.0-M6](https://github.com/sbt/sbt-native-packager/tree/v1.2.0-M6) (2016-10-08)
@@ -625,6 +718,7 @@
 **Merged pull requests:**
 
 - Replace deprecated java Docker container with openjdk \(\#877\) [\#970](https://github.com/sbt/sbt-native-packager/pull/970) ([edouardKaiser](https://github.com/edouardKaiser))
+- Change shebang in bash-forwarder-template to `\#!/usr/bin/env bash`. [\#923](https://github.com/sbt/sbt-native-packager/pull/923) ([jan0sch](https://github.com/jan0sch))
 - Adding rpm override script tests [\#891](https://github.com/sbt/sbt-native-packager/pull/891) ([mitch-seymour](https://github.com/mitch-seymour))
 - Updated cheatsheet with the correct file path for overriding service manager scripts [\#890](https://github.com/sbt/sbt-native-packager/pull/890) ([mitch-seymour](https://github.com/mitch-seymour))
 - Update documentation with warning about overriding default tar options. [\#889](https://github.com/sbt/sbt-native-packager/pull/889) ([mackler](https://github.com/mackler))
@@ -637,7 +731,7 @@
 - Updated dockerUpdateLatest documentation to indicate minimum docker v… [\#874](https://github.com/sbt/sbt-native-packager/pull/874) ([thrykol](https://github.com/thrykol))
 - Clarify and fix grammar for Formats docs [\#867](https://github.com/sbt/sbt-native-packager/pull/867) ([weedySeaDragon](https://github.com/weedySeaDragon))
 - Updated systemloaders.rst [\#865](https://github.com/sbt/sbt-native-packager/pull/865) ([martinstuder](https://github.com/martinstuder))
-- Introduction:  clarify and fix grammar [\#863](https://github.com/sbt/sbt-native-packager/pull/863) ([weedySeaDragon](https://github.com/weedySeaDragon))
+- Make `sbt docker:stage` work on Windows [\#824](https://github.com/sbt/sbt-native-packager/pull/824) ([oporkka](https://github.com/oporkka))
 
 ## [v1.2.0-M5](https://github.com/sbt/sbt-native-packager/tree/v1.2.0-M5) (2016-08-07)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.2.0-M4...v1.2.0-M5)
@@ -693,6 +787,7 @@
 
 **Merged pull requests:**
 
+- Introduction:  clarify and fix grammar [\#863](https://github.com/sbt/sbt-native-packager/pull/863) ([weedySeaDragon](https://github.com/weedySeaDragon))
 - docker: tag -f is deprecated \(backport to 1.1.x\) [\#845](https://github.com/sbt/sbt-native-packager/pull/845) ([maciej](https://github.com/maciej))
 - Make `sbt docker:stage` work on Windows [\#842](https://github.com/sbt/sbt-native-packager/pull/842) ([oporkka](https://github.com/oporkka))
 - concners -\> connerns introduction.rst [\#837](https://github.com/sbt/sbt-native-packager/pull/837) ([hedefalk](https://github.com/hedefalk))
@@ -729,7 +824,6 @@
 **Merged pull requests:**
 
 - Fix duplicate RPM scriptlet override [\#825](https://github.com/sbt/sbt-native-packager/pull/825) ([fsat](https://github.com/fsat))
-- Make `sbt docker:stage` work on Windows [\#824](https://github.com/sbt/sbt-native-packager/pull/824) ([oporkka](https://github.com/oporkka))
 - Expand the java home argument [\#822](https://github.com/sbt/sbt-native-packager/pull/822) ([cquiroz](https://github.com/cquiroz))
 - docker: tag -f is deprecated [\#821](https://github.com/sbt/sbt-native-packager/pull/821) ([sgrankin](https://github.com/sgrankin))
 - FIX \#762 Add native packager logo to docs and README [\#820](https://github.com/sbt/sbt-native-packager/pull/820) ([muuki88](https://github.com/muuki88))
@@ -863,6 +957,7 @@
 - Updates version of DockerSpotifyClient to 3.5.13 and fixes NullPointerException [\#749](https://github.com/sbt/sbt-native-packager/pull/749) ([vsuharnikov](https://github.com/vsuharnikov))
 - Fix errors when .bat file path contains paranthesis. [\#748](https://github.com/sbt/sbt-native-packager/pull/748) ([szdmr](https://github.com/szdmr))
 - Fix minor typo [\#747](https://github.com/sbt/sbt-native-packager/pull/747) ([fayimora](https://github.com/fayimora))
+- Fix typo in archetype documentation [\#717](https://github.com/sbt/sbt-native-packager/pull/717) ([macalinao](https://github.com/macalinao))
 
 ## [v1.1.0-RC2](https://github.com/sbt/sbt-native-packager/tree/v1.1.0-RC2) (2016-02-23)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.1.0-RC1...v1.1.0-RC2)
@@ -912,7 +1007,6 @@
 
 - Add Proguard example to Custom Package Format documentation [\#721](https://github.com/sbt/sbt-native-packager/pull/721) ([mikebridge](https://github.com/mikebridge))
 - Mark docker and jdeb as provided dependencies [\#719](https://github.com/sbt/sbt-native-packager/pull/719) ([muuki88](https://github.com/muuki88))
-- Fix typo in archetype documentation [\#717](https://github.com/sbt/sbt-native-packager/pull/717) ([macalinao](https://github.com/macalinao))
 
 ## [v1.1.0-M1](https://github.com/sbt/sbt-native-packager/tree/v1.1.0-M1) (2015-12-13)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v1.0.6...v1.1.0-M1)
@@ -1077,6 +1171,7 @@
 - If the /var/run \(aka /run\) folder doesn't exist for the PID file, create it [\#611](https://github.com/sbt/sbt-native-packager/pull/611) ([ekuns](https://github.com/ekuns))
 - Add note about JDeb adding dependencies [\#608](https://github.com/sbt/sbt-native-packager/pull/608) ([philwills](https://github.com/philwills))
 - tar --force-local on windows [\#604](https://github.com/sbt/sbt-native-packager/pull/604) ([sumkincpp](https://github.com/sumkincpp))
+- grammar fix for website [\#595](https://github.com/sbt/sbt-native-packager/pull/595) ([SethTisue](https://github.com/SethTisue))
 - FIX \#590 fixed irritating windows documentation [\#592](https://github.com/sbt/sbt-native-packager/pull/592) ([muuki88](https://github.com/muuki88))
 
 ## [v1.0.3](https://github.com/sbt/sbt-native-packager/tree/v1.0.3) (2015-06-16)
@@ -1104,7 +1199,6 @@
 
 - FIX \#347 add ability to add arbitrary stuff from the classpath. Only [\#603](https://github.com/sbt/sbt-native-packager/pull/603) ([muuki88](https://github.com/muuki88))
 - FIX \#599 \#598 Extended docs for application customization [\#601](https://github.com/sbt/sbt-native-packager/pull/601) ([muuki88](https://github.com/muuki88))
-- grammar fix for website [\#595](https://github.com/sbt/sbt-native-packager/pull/595) ([SethTisue](https://github.com/SethTisue))
 - Documented packageTemplateMappings [\#591](https://github.com/sbt/sbt-native-packager/pull/591) ([kodemaniak](https://github.com/kodemaniak))
 - Updated sbt plugin fragment version. [\#589](https://github.com/sbt/sbt-native-packager/pull/589) ([metasim](https://github.com/metasim))
 - Use docker on windows \#573 [\#588](https://github.com/sbt/sbt-native-packager/pull/588) ([sjeandeaux](https://github.com/sjeandeaux))
@@ -1169,6 +1263,7 @@
 
 **Merged pull requests:**
 
+- Release preparations [\#550](https://github.com/sbt/sbt-native-packager/pull/550) ([muuki88](https://github.com/muuki88))
 - Fix warnings from rpm lint [\#547](https://github.com/sbt/sbt-native-packager/pull/547) ([dwhjames](https://github.com/dwhjames))
 - Fixing docs with newest changes [\#546](https://github.com/sbt/sbt-native-packager/pull/546) ([muuki88](https://github.com/muuki88))
 - fix for issue \#529 [\#544](https://github.com/sbt/sbt-native-packager/pull/544) ([dwhjames](https://github.com/dwhjames))
@@ -1202,7 +1297,6 @@
 
 **Merged pull requests:**
 
-- Release preparations [\#550](https://github.com/sbt/sbt-native-packager/pull/550) ([muuki88](https://github.com/muuki88))
 - Improvements to RPM documentation [\#535](https://github.com/sbt/sbt-native-packager/pull/535) ([dwhjames](https://github.com/dwhjames))
 - Fix and improve docs for rpmAutoreq and rpmAutoprov [\#534](https://github.com/sbt/sbt-native-packager/pull/534) ([dwhjames](https://github.com/dwhjames))
 - !Update default dockerBaseImage to official repo [\#533](https://github.com/sbt/sbt-native-packager/pull/533) ([danielwegener](https://github.com/danielwegener))
@@ -1498,6 +1592,7 @@
 - fix minor spelling mistakes [\#338](https://github.com/sbt/sbt-native-packager/pull/338) ([mmorearty](https://github.com/mmorearty))
 - change plugin version to 0.7.5-RC1 in documentation  [\#337](https://github.com/sbt/sbt-native-packager/pull/337) ([aviks](https://github.com/aviks))
 - Added support for classifiers in multiproject builds [\#333](https://github.com/sbt/sbt-native-packager/pull/333) ([jroper](https://github.com/jroper))
+- Implemented the changelog to RPM [\#332](https://github.com/sbt/sbt-native-packager/pull/332) ([antonini](https://github.com/antonini))
 - flag to update latest tag [\#317](https://github.com/sbt/sbt-native-packager/pull/317) ([rfranco](https://github.com/rfranco))
 
 ## [v0.7.5-RC1](https://github.com/sbt/sbt-native-packager/tree/v0.7.5-RC1) (2014-08-20)
@@ -1518,7 +1613,6 @@
 
 **Merged pull requests:**
 
-- Implemented the changelog to RPM [\#332](https://github.com/sbt/sbt-native-packager/pull/332) ([antonini](https://github.com/antonini))
 - Fix RPM System User Deletion on Upgrade [\#326](https://github.com/sbt/sbt-native-packager/pull/326) ([pcting](https://github.com/pcting))
 - FIX \#324 adding empty dirs to deb package [\#325](https://github.com/sbt/sbt-native-packager/pull/325) ([kardapoltsev](https://github.com/kardapoltsev))
 - FIX \#322 adding permissions to jdeb packaging [\#323](https://github.com/sbt/sbt-native-packager/pull/323) ([kardapoltsev](https://github.com/kardapoltsev))
@@ -1558,6 +1652,7 @@
 **Merged pull requests:**
 
 - Update README now that 0.7.2 is released [\#300](https://github.com/sbt/sbt-native-packager/pull/300) ([benmccann](https://github.com/benmccann))
+- Adding docs for name-delegation in \#250 [\#299](https://github.com/sbt/sbt-native-packager/pull/299) ([muuki88](https://github.com/muuki88))
 - Fixes \#292 - Not feeding new isSnapshot value to ivy configuration. [\#298](https://github.com/sbt/sbt-native-packager/pull/298) ([jsuereth](https://github.com/jsuereth))
 - \[docker\] add build --force-rm [\#294](https://github.com/sbt/sbt-native-packager/pull/294) ([rfranco](https://github.com/rfranco))
 - fix order of docker commands [\#293](https://github.com/sbt/sbt-native-packager/pull/293) ([rfranco](https://github.com/rfranco))
@@ -1580,7 +1675,6 @@
 
 - Adding documentation for JDeb Packaging [\#290](https://github.com/sbt/sbt-native-packager/pull/290) ([muuki88](https://github.com/muuki88))
 - Upgrading sbt and adding releaseNotes plugin [\#286](https://github.com/sbt/sbt-native-packager/pull/286) ([muuki88](https://github.com/muuki88))
-- First refactoring to provide multiple debian packaging strategies [\#284](https://github.com/sbt/sbt-native-packager/pull/284) ([muuki88](https://github.com/muuki88))
 - - Make the /var/log/\<pkg\> symlink doc match the package location. [\#283](https://github.com/sbt/sbt-native-packager/pull/283) ([paddymahoney](https://github.com/paddymahoney))
 - Documentation for docker support. [\#281](https://github.com/sbt/sbt-native-packager/pull/281) ([fiadliel](https://github.com/fiadliel))
 - Support Docker volumes. [\#280](https://github.com/sbt/sbt-native-packager/pull/280) ([fiadliel](https://github.com/fiadliel))
@@ -1605,13 +1699,14 @@
 
 **Merged pull requests:**
 
-- Switched systemv start-rpm-template daemon's output [\#274](https://github.com/sbt/sbt-native-packager/pull/274) ([ei82](https://github.com/ei82))
-- Fixed user deletion issue in rpm postuninstall scriptlet. [\#272](https://github.com/sbt/sbt-native-packager/pull/272) ([ei82](https://github.com/ei82))
+- Switched systemv start-rpm-template daemon's output [\#274](https://github.com/sbt/sbt-native-packager/pull/274) ([spigene](https://github.com/spigene))
+- Fixed user deletion issue in rpm postuninstall scriptlet. [\#272](https://github.com/sbt/sbt-native-packager/pull/272) ([spigene](https://github.com/spigene))
 - implemented `die` function in bash-template [\#271](https://github.com/sbt/sbt-native-packager/pull/271) ([philipjkim](https://github.com/philipjkim))
 - Support for changelog and .changes file generation [\#268](https://github.com/sbt/sbt-native-packager/pull/268) ([jaunis](https://github.com/jaunis))
 - Let bash-template work when the directory contains spaces. [\#267](https://github.com/sbt/sbt-native-packager/pull/267) ([darabos](https://github.com/darabos))
 - Adding experimental osx travis-ci support [\#257](https://github.com/sbt/sbt-native-packager/pull/257) ([muuki88](https://github.com/muuki88))
 - FIX \#249. Systemd support for Debian and Rpm [\#256](https://github.com/sbt/sbt-native-packager/pull/256) ([kardapoltsev](https://github.com/kardapoltsev))
+- Fix typos [\#244](https://github.com/sbt/sbt-native-packager/pull/244) ([Blaisorblade](https://github.com/Blaisorblade))
 - support RPM 'Prefix'.   [\#242](https://github.com/sbt/sbt-native-packager/pull/242) ([jayaras](https://github.com/jayaras))
 
 ## [v0.7.2-RC1](https://github.com/sbt/sbt-native-packager/tree/v0.7.2-RC1) (2014-05-22)
@@ -1627,7 +1722,6 @@
 
 **Merged pull requests:**
 
-- Adding docs for name-delegation in \#250 [\#299](https://github.com/sbt/sbt-native-packager/pull/299) ([muuki88](https://github.com/muuki88))
 - Setting correct version and adding import statements [\#261](https://github.com/sbt/sbt-native-packager/pull/261) ([muuki88](https://github.com/muuki88))
 
 ## [v0.7.1](https://github.com/sbt/sbt-native-packager/tree/v0.7.1) (2014-05-19)
@@ -1642,10 +1736,10 @@
 **Closed issues:**
 
 - JavaServerApplication startup order [\#239](https://github.com/sbt/sbt-native-packager/issues/239)
-- In windows java parmeters are not received [\#155](https://github.com/sbt/sbt-native-packager/issues/155)
 
 **Merged pull requests:**
 
+- First refactoring to provide multiple debian packaging strategies [\#284](https://github.com/sbt/sbt-native-packager/pull/284) ([muuki88](https://github.com/muuki88))
 - Fix non Java 8 MaxPermSize configuration [\#258](https://github.com/sbt/sbt-native-packager/pull/258) ([jroper](https://github.com/jroper))
 - FIX \#252 Removing the declare=0 variable [\#255](https://github.com/sbt/sbt-native-packager/pull/255) ([muuki88](https://github.com/muuki88))
 - Do not try to setup missing deployment settings for Docker. [\#251](https://github.com/sbt/sbt-native-packager/pull/251) ([fiadliel](https://github.com/fiadliel))
@@ -1671,7 +1765,6 @@
 
 - FIX \#211 and \#232. Checking $java\_args\[@\] for memory settings, too. [\#246](https://github.com/sbt/sbt-native-packager/pull/246) ([muuki88](https://github.com/muuki88))
 - ability to specify java server app start up order in debian implemented [\#245](https://github.com/sbt/sbt-native-packager/pull/245) ([kardapoltsev](https://github.com/kardapoltsev))
-- Fix typos [\#244](https://github.com/sbt/sbt-native-packager/pull/244) ([Blaisorblade](https://github.com/Blaisorblade))
 - New setting daemonShell.  [\#237](https://github.com/sbt/sbt-native-packager/pull/237) ([muuki88](https://github.com/muuki88))
 - Adding documentation in universal getting started guide. [\#233](https://github.com/sbt/sbt-native-packager/pull/233) ([muuki88](https://github.com/muuki88))
 - Add Debian script header [\#231](https://github.com/sbt/sbt-native-packager/pull/231) ([dax](https://github.com/dax))
@@ -1791,6 +1884,7 @@
 
 **Closed issues:**
 
+- In windows java parmeters are not received [\#155](https://github.com/sbt/sbt-native-packager/issues/155)
 - Debian - Warnings on install [\#136](https://github.com/sbt/sbt-native-packager/issues/136)
 
 **Merged pull requests:**
@@ -1884,7 +1978,6 @@
 - task \#54: Template Directories for Debian package [\#63](https://github.com/sbt/sbt-native-packager/pull/63) ([muuki88](https://github.com/muuki88))
 - Fixing debian package installation/deinstallation [\#60](https://github.com/sbt/sbt-native-packager/pull/60) ([muuki88](https://github.com/muuki88))
 - bat-template pass arguments [\#59](https://github.com/sbt/sbt-native-packager/pull/59) ([rmgk](https://github.com/rmgk))
-- Prefer normalizedName for linux-friendly packages, rather than requiring... [\#41](https://github.com/sbt/sbt-native-packager/pull/41) ([jsuereth](https://github.com/jsuereth))
 
 ## [v0.6.3](https://github.com/sbt/sbt-native-packager/tree/v0.6.3) (2013-11-01)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v0.6.2...v0.6.3)
@@ -1912,6 +2005,7 @@
 - Update README.md [\#49](https://github.com/sbt/sbt-native-packager/pull/49) ([schmmd](https://github.com/schmmd))
 - Fixes \#39 - Unable to follow symlinks. [\#45](https://github.com/sbt/sbt-native-packager/pull/45) ([jsuereth](https://github.com/jsuereth))
 - Working on \#42 [\#44](https://github.com/sbt/sbt-native-packager/pull/44) ([muuki88](https://github.com/muuki88))
+- Prefer normalizedName for linux-friendly packages, rather than requiring... [\#41](https://github.com/sbt/sbt-native-packager/pull/41) ([jsuereth](https://github.com/jsuereth))
 - Fix \#11 debian symlinks now absolute. Maybe by default for all? [\#40](https://github.com/sbt/sbt-native-packager/pull/40) ([muuki88](https://github.com/muuki88))
 - fix two typos in code examples in the doc. [\#36](https://github.com/sbt/sbt-native-packager/pull/36) ([gourlaysama](https://github.com/gourlaysama))
 - Fixed typo, shortened hash string padding and removed debug printlns [\#33](https://github.com/sbt/sbt-native-packager/pull/33) ([ptrbrtz](https://github.com/ptrbrtz))
@@ -1923,6 +2017,7 @@
 
 - Duplicate entries in zip [\#25](https://github.com/sbt/sbt-native-packager/issues/25)
 - Readme / Usage typo [\#22](https://github.com/sbt/sbt-native-packager/issues/22)
+- include subprojects in parent aggregator [\#19](https://github.com/sbt/sbt-native-packager/issues/19)
 
 **Merged pull requests:**
 
@@ -1937,10 +2032,6 @@
 
 ## [v0.6.1](https://github.com/sbt/sbt-native-packager/tree/v0.6.1) (2013-08-21)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v0.6.0...v0.6.1)
-
-**Closed issues:**
-
-- include subprojects in parent aggregator [\#19](https://github.com/sbt/sbt-native-packager/issues/19)
 
 **Merged pull requests:**
 
@@ -1957,13 +2048,10 @@
 - Add a layer between universal + specific native packages [\#14](https://github.com/sbt/sbt-native-packager/pull/14) ([jsuereth](https://github.com/jsuereth))
 - Added bare-minimum support for creating apple's DMG files. [\#13](https://github.com/sbt/sbt-native-packager/pull/13) ([jsuereth](https://github.com/jsuereth))
 - RPM Spec Automatic Dependencies [\#11](https://github.com/sbt/sbt-native-packager/pull/11) ([pussinboots](https://github.com/pussinboots))
+- Add support for package maintainer scripts. [\#10](https://github.com/sbt/sbt-native-packager/pull/10) ([saeta](https://github.com/saeta))
 
 ## [0.5.4](https://github.com/sbt/sbt-native-packager/tree/0.5.4) (2013-03-07)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v0.5.2...0.5.4)
-
-**Merged pull requests:**
-
-- Add support for package maintainer scripts. [\#10](https://github.com/sbt/sbt-native-packager/pull/10) ([saeta](https://github.com/saeta))
 
 ## [v0.5.2](https://github.com/sbt/sbt-native-packager/tree/v0.5.2) (2013-02-19)
 [Full Changelog](https://github.com/sbt/sbt-native-packager/compare/v0.5.1...v0.5.2)
